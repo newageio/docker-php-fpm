@@ -13,6 +13,7 @@ RUN pecl install mongodb
 RUN apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
 RUN echo "extension=mongodb.so" > /etc/php/${PHP_VERSION}/cli/conf.d/25-mongodb.ini
+RUN echo "extension=mongodb.so" > /etc/php/${PHP_VERSION}/fpm/conf.d/25-mongodb.ini
 
 RUN mkdir -p /var/run/php/
 
